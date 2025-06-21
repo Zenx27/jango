@@ -1,0 +1,10 @@
+{% extends "todoapp/base.html" %}
+{% block title %}Добавить/Редактировать{% endblock %}
+{% block content %}
+<h2>{% if form.instance.pk %}Редактировать{% else %}Добавить{% endif %} задачу</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}
